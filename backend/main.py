@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 # 1. Model එක load කරගැනීම
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "xgboost_car_price_model.joblib")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "xgboost_car_price_model_log.joblib")
 try:
     model_pipeline = joblib.load(MODEL_PATH)
     print("✅ Model pipeline loaded successfully.")
