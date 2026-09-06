@@ -8,7 +8,7 @@ The project uses real-world vehicle listing data collected from local classified
 
 ## 🌐 Live Demo
 
-**Frontend:** [Insert your Vercel Link here]
+**Frontend:** [https://ikman-price-predictor.vercel.app/]
 
 **Backend API:** [Insert your Render API Link here]
 
