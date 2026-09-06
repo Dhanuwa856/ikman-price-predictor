@@ -1,0 +1,77 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="appnope" />
+          <option value="attrs" />
+          <option value="backcall" />
+          <option value="bleach" />
+          <option value="decorator" />
+          <option value="defusedxml" />
+          <option value="entrypoints" />
+          <option value="importlib-metadata" />
+          <option value="ipykernel" />
+          <option value="ipython" />
+          <option value="ipython-genutils" />
+          <option value="ipywidgets" />
+          <option value="jedi" />
+          <option value="Jinja2" />
+          <option value="jsonschema" />
+          <option value="jupyter" />
+          <option value="jupyter-client" />
+          <option value="jupyter-console" />
+          <option value="jupyter-core" />
+          <option value="MarkupSafe" />
+          <option value="mistune" />
+          <option value="nbconvert" />
+          <option value="nbformat" />
+          <option value="notebook" />
+          <option value="numpy" />
+          <option value="packaging" />
+          <option value="pandas" />
+          <option value="pandocfilters" />
+          <option value="parso" />
+          <option value="pexpect" />
+          <option value="pickleshare" />
+          <option value="prometheus-client" />
+          <option value="prompt-toolkit" />
+          <option value="ptyprocess" />
+          <option value="Pygments" />
+          <option value="pyparsing" />
+          <option value="pyrsistent" />
+          <option value="python-dateutil" />
+          <option value="pytz" />
+          <option value="pyzmq" />
+          <option value="qtconsole" />
+          <option value="QtPy" />
+          <option value="Send2Trash" />
+          <option value="six" />
+          <option value="terminado" />
+          <option value="testpath" />
+          <option value="tornado" />
+          <option value="traitlets" />
+          <option value="wcwidth" />
+          <option value="webencodings" />
+          <option value="widgetsnbextension" />
+          <option value="zipp" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyStubPackagesAdvertiser" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="pandas" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="notebooks.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

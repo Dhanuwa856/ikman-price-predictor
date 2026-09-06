@@ -1,0 +1,22 @@
+# Virtual Environment
+venv/
+.env
+
+# Python Caches
+__pycache__/
+*.pyc
+
+# Datasets (Crucial: never upload raw/cleaned data to GitHub)
+data/raw/*
+data/processed/*
+*.csv
+*.json
+
+# Trained Models
+*.joblib
+*.pkl
+*.h5
+
+# IDE settings
+.idea/
+.ipynb_checkpoints/
