@@ -35,6 +35,7 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     setPredictedPrice(null);
+    setError(null); // Clear any previous errors
 
     // Fetch the URL from the .env file, with a fallback for local testing
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/predict";
@@ -45,17 +46,22 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
       const data = await res.json();
-      if (data.success) {
+
+      if (res.ok && data.success) {
         setPredictedPrice(data.formatted_price);
       } else {
-        setPredictedPrice("Error: " + data.detail);
+        // Trigger the red error UI box
+        setError(data.detail || "Failed to calculate price. Please check your inputs.");
       }
-    } catch (error) {
-      setPredictedPrice("Error connecting to server");
+    } catch (err) {
+      // Catch network errors (e.g., server offline, CORS issue)
+      setError("Error connecting to the prediction server. Please ensure the backend is running.");
     }
     setLoading(false);
   };
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4 sm:p-6 md:p-8">
       <div className="w-full max-w-3xl bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 border border-white/30 transition-all">
@@ -290,7 +296,7 @@ export default function Home() {
         </form>
 
         {/* Result */}
-        {predictedPrice && (
+        {predictedPrice && !error && (
           <div className="mt-7 animate-slideUp">
             <div className="bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200 rounded-xl p-6 text-center">
               <p className="text-gray-600 font-medium text-sm uppercase tracking-wide">
