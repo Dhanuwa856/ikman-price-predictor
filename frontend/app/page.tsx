@@ -35,10 +35,12 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     setPredictedPrice(null);
-    setError(null);
+
+    // Fetch the URL from the .env file, with a fallback for local testing
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/predict";
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/predict", {
+      const res = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -47,14 +49,13 @@ export default function Home() {
       if (data.success) {
         setPredictedPrice(data.formatted_price);
       } else {
-        setError(data.detail || "Prediction failed.");
+        setPredictedPrice("Error: " + data.detail);
       }
-    } catch (err) {
-      setError("Could not connect to the prediction server.");
+    } catch (error) {
+      setPredictedPrice("Error connecting to server");
     }
     setLoading(false);
   };
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4 sm:p-6 md:p-8">
       <div className="w-full max-w-3xl bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 border border-white/30 transition-all">
